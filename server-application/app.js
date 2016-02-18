@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var expressSession = require('express-session');
+var passport = require('passport');
+var AuthLocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -20,10 +23,46 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession( {
+                        secret: "mysecret",
+             saveUninitialized: true,
+                        resave: true,
+                        cookie: {maxAge: 60000}
+               }
+));
 
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
+
+passport.use('local', new AuthLocalStrategy(
+    function (username, password, done) {
+        if (username == "admin" && password == "admin") {
+            return done(null, {
+                username: "admin"
+            });
+        }
+        return done(null, false, { 
+            message: 'wrong login' 
+        });
+    }
+));
+
+passport.serializeUser(function(user, done) {
+    done(null, JSON.stringify(user));
+});
+
+passport.deserializeUser(function(data, done) {
+    try {
+        done(null, JSON.parse(data));
+    } catch (e) {
+        done(e)
+    }
+    console.log('deserialize');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
