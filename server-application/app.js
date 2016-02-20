@@ -10,6 +10,8 @@ var AuthLocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var flash = require('connect-flash');
+var user_base = require('./userBase');
+user_base.initialize();
 
 var app = express();
 
@@ -24,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressSession( {
-                        secret: "mysecret",
+                        secret: "vinipuh",
              saveUninitialized: true,
                         resave: true,
                         cookie: {maxAge: 60000}
@@ -40,13 +42,11 @@ app.use('/users', users);
 
 passport.use('local', new AuthLocalStrategy(
     function (username, password, done) {
-        if (username == "admin" && password == "admin") {
-            return done(null, {
-                username: "admin"
-            });
-        }
-        return done(null, false, { 
-            message: 'wrong login' 
+        user_base.get(username, function(cred) {
+            if (cred && cred.password == password) {
+                return done(null, {username: username,permissions: cred.permissions});
+            }
+            return done(null, false, {message: ' wrong login or user name'});
         });
     }
 ));
