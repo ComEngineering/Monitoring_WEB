@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    title Login
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(type='text/css', rel='stylesheet', href='styles/font-awesome.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/bootstrap.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/all.css')
+    link(type='text/css', rel='stylesheet', href='styles/main.css')
+    link(type='text/css', rel='stylesheet', href='styles/style-responsive.css')
+  body(style='background:#ccc;')
+    .page-form
+      .panel.panel-black
+        .panel-heading Monitoring system
+        .panel-body
+          form.form-horizontal(action='login.html', method='post')
+            .form-body.pal
+              .form-group
+                .col-md-12
+                  .input-icon.left
+                    i.fa.fa-user
+                    input#inputName.form-control(name='username', type='text', placeholder='Login')
+              .form-group
+                .col-md-12
+                  .input-icon.left
+                    i.fa.fa-lock
+                    input#inputPassword.form-control(name='password', type='password', placeholder='Password')
+              .form-group.mbn
+                .col-lg-12(align='right')
+                  .form-group.mbn
+                    .col-lg-2
+                      button.btn.btn-primary(type='submit')
+                        | Sign In

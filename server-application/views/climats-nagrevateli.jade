@@ -1,0 +1,333 @@
+doctype html
+html(lang='en')
+  head
+    title Dashboard | Dashboard
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='images/icons/favicon.ico')
+    link(rel='apple-touch-icon', href='images/icons/favicon.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='images/icons/favicon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='images/icons/favicon-114x114.png')
+    // Loading bootstrap css
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700')
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700,300')
+    link(type='text/css', rel='stylesheet', href='styles/jquery-ui-1.10.4.custom.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/font-awesome.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/bootstrap.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/animate.css')
+    link(type='text/css', rel='stylesheet', href='styles/all.css')
+    link(type='text/css', rel='stylesheet', href='styles/main.css')
+    link(type='text/css', rel='stylesheet', href='styles/glyphicons.css')
+    link(type='text/css', rel='stylesheet', href='styles/style-responsive.css')
+    link(type='text/css', rel='stylesheet', href='styles/zabuto_calendar.min.css')
+    link(type='text/css', rel='stylesheet', href='styles/pace.css')
+    link(type='text/css', rel='stylesheet', href='styles/jquery.news-ticker.css')
+  body.skin-blue.sidebar-mini
+    .wrapper
+      // BEGIN BACK TO TOP
+      a#totop(href='#')
+        i.fa.fa-angle-up
+      // END BACK TO TOP
+      // BEGIN TOPBAR
+      #header-topbar-option-demo.page-header-topbar
+        nav#topbar.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0;', data-step='3')
+          .navbar-header
+            a#logo.navbar-brand(href='/')
+              span.fa.fa-rocket
+              span.logo-text Teco System Monitoring
+              span.logo-text-icon(style='display: none') µ
+          .topbar-main
+            a.sidebar-toggle(data-toggle='offcanvas', href='#', role='button')
+              i.fa.fa-bars
+            a#save(href='#')
+              i.fa.fa-save
+            ul.nav.navbar.navbar-top-links.navbar-right.mbn
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-bell.fa-fw
+                  span.badge.badge-red 3
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-exclamation-triangle.fa-fw
+                  span.badge.badge-orange 7
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-flag.fa-fw
+                  span.badge.badge-blue 8
+              li.dropdown.topbar-user
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  img.img-responsive.img-circle(src='images/avatar/48.jpg', alt='')
+                  span.hidden-xs Admin
+                  span.caret
+                ul.dropdown-menu.dropdown-user.pull-right
+                  li
+                    a(href='login.html')
+                      i.fa.fa-key
+                      | Log Out
+      // END TOPBAR
+      // BEGIN SIDEBAR MENU
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          ul.sidebar-menu
+            li
+              a(href='/')
+                i.fa.glyphicons.glyphicons-info-sign.fa-fw
+                span.menu-title Обзор системы
+            li.treeview
+              a(href='#')
+                i.fa.glyphicons.glyphicons-server.fa-fw
+                span.menu-title Модули
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='modules-main.html')
+                    i.fa.glyphicons.glyphicons-server.fa-fw
+                    span.menu-title Главный модуль
+            li.treeview.active
+              a(href='#')
+                i.fa.glyphicons.glyphicons-temperature.fa-fw
+                span.menu-title Климатика
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='climats-cond.html')
+                    i.fa.glyphicons.glyphicons-snowflake.fa-fw
+                    span.menu-title Кондиционер
+                li
+                  a(href='climats-pelte.html')
+                    i.fa.glyphicons.glyphicons-none-color-swatch.fa-fw
+                    span.menu-title Пельтье
+                li.active
+                  a(href='climats-nagrevateli.html')
+                    i.fa.glyphicons.glyphicons-heat.fa-fw
+                    span.menu-title Нагреватели
+            li
+              a(href='system-power.html')
+                i.fa.fa-plug.fa-fw
+                  .icon-bg.bg-orange
+                span.menu-title Система питания
+            li
+              a(href='system-logs.html')
+                i.fa.fa-file-text-o.fa-fw
+                  .icon-bg.bg-orange
+                span.menu-title Логи
+            li.treeview
+              a(href='#')
+                i.fa.fa-cog.fa-fw
+                  .icon-bg.bg-orange
+                span.menu-title Настройки
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='options-net.html')
+                    span.glyphicons.glyphicons-inbox
+                    span.menu-title Сеть
+                li
+                  a(href='options-snmp.html')
+                    span.glyphicons.glyphicons-cluster
+                    span.menu-title SNMP
+                li
+                  a(href='options-modbus.html')
+                    span.glyphicons.glyphicons-tree-structure
+                    span.menu-title ModBus
+                li
+                  a(href='options-time.html')
+                    span.glyphicons.glyphicons-calendar
+                    span.menu-title Время
+      .content-wrapper
+        #page-wrapper
+          // BEGIN TITLE & BREADCRUMB PAGE
+          #title-breadcrumb-option-demo.page-title-breadcrumb
+            .page-header.pull-left
+              .page-title
+                | Климатика \ Нагреватели
+            ol.breadcrumb.page-breadcrumb.pull-right
+              li
+                i.fa.fa-home
+                a(href='dashboard.html') Главная
+                i.fa.fa-angle-right
+              li.hidden
+                a(href='#') Климатика
+                i.fa.fa-angle-right
+              li.active Климатика
+            .clearfix
+          // END TITLE & BREADCRUMB PAGE
+          // BEGIN CONTENT
+          .page-content
+            .row.mbl
+              ul#generalTab.nav.nav-tabs.responsive.hidden-xs.hidden-sm
+                li.active
+                  a(href='#status-tab', data-toggle='tab') Состояния
+                li
+                  a(href='#params-tab', data-toggle='tab') Параметры
+                li
+                  a(href='#monitor-tab', data-toggle='tab') Монитор событий
+              #generalTabContent.tab-content.responsive.hidden-xs.hidden-sm
+                #status-tab.tab-pane.fade.in.active
+                  .row
+                    .col-lg-12
+                      .panel.panel-grey
+                        .panel-heading Температурные датчики кондиционера
+                        .panel-body
+                          table#datchiki-temperaturi-cond.table.table-hover.table-bordered
+                            thead
+                              tr
+                                th №
+                                th Наименование
+                                th Значение
+                                th Комментарий
+                            tbody
+                              tr
+                                td 1
+                                td.active Dt1
+                                td.success 24.0
+                                td.warning Верх отсека активного оборудования
+                              tr
+                                td 1
+                                td.active Dt2
+                                td.success 22.5
+                                td.warning Низ отсека активного оборудования
+                  .row
+                    .col-lg-12
+                      .panel.panel-grey
+                        .panel-heading Состояние систем кондиционера
+                        .panel-body
+                          table#status-system-cond.table.table-hover.table-bordered
+                            thead
+                              tr
+                                th №
+                                th Наименование
+                                th Значение
+                                th Комментарий
+                            tbody
+                              tr
+                                td 1
+                                td.active Dt1
+                                td.success 24.0
+                                td.warning Верх отсека активного оборудования
+                              tr
+                                td 1
+                                td.active Dt2
+                                td.success 22.5
+                                td.warning Низ отсека активного оборудования
+                  .row
+                    .col-lg-12
+                      .panel.panel-grey
+                        .panel-heading Аварии кондиционера
+                        .panel-body
+                          table#dangers-cond.table.table-hover.table-bordered
+                            thead
+                              tr
+                                th №
+                                th Наименование
+                                th Значение
+                                th Комментарий
+                            tbody
+                              tr
+                                td 1
+                                td.active Dt1
+                                td.success 24.0
+                                td.warning Верх отсека активного оборудования
+                              tr
+                                td 1
+                                td.active Dt2
+                                td.success 22.5
+                                td.warning Низ отсека активного оборудования
+                #params-tab.tab-pane.fade.in
+                  .row
+                    .col-md-8
+                      table#parametrs-cond.table.table-hover.table-bordered
+                        thead
+                          tr
+                            th.bggray(colspan='7') Параметрирование кондиционера
+                          tr
+                            th №
+                            th Наименование
+                            th Значение
+                            th Комментарий
+                        tbody
+                          tr
+                            td 1
+                            td.active t внутренняя (С)
+                            td 22
+                            td задание внутренней температуры (относительно t3)(min:10, max:40)
+                          tr
+                            td 1
+                            td.active t внутренняя (С)
+                            td 22
+                            td задание внутренней температуры (относительно t3)(min:10, max:40)
+                          tr
+                            td.bggray(colspan='7') Настройка работы вентилятора конденсатора "!!!"
+                          tr
+                            td 1
+                            td.active t внутренняя (С)
+                            td 22
+                            td задание внутренней температуры (относительно t3)(min:10, max:40)
+                          tr
+                            td 1
+                            td.active t внутренняя (С)
+                            td 22
+                            td задание внутренней температуры (относительно t3)(min:10, max:40)
+                #monitor-tab.tab-pane.fade.in
+                  .row
+                    .col-md-8
+                      table#status-discrete-in.table.table-hover.table-bordered
+                        thead
+                          tr
+                            th.bggray(colspan='7') Монитор событий
+                          tr
+                            th №
+                            th Вкл/выкл
+                            th Наименование
+                            th Строгость события
+                            th(colspan='2')
+                              | Значения события
+                              br
+                              | (меньше/больше)
+                            th Действие
+                        tbody
+                          tr
+                            td.bggray(colspan='7') Температурные датчики кондиционера
+                          tr
+                            td 1
+                            td.active
+                              input(type='checkbox', name='dt1')
+                            td Dt1
+                            td.success warning
+                            td -20
+                            td 50
+                            td no
+                          tr
+                            td 2
+                            td.active
+                              input(type='checkbox', name='dt1')
+                            td Dt2
+                            td.success warning
+                            td -20
+                            td 50
+                            td no
+          script(src='script/jquery-1.10.2.min.js')
+          script(src='script/jquery-migrate-1.2.1.min.js')
+          script(src='script/jquery-ui.js')
+          script(src='script/bootstrap.min.js')
+          script(src='script/bootstrap-hover-dropdown.js')
+          script(src='script/html5shiv.js')
+          script(src='script/respond.min.js')
+          script(src='script/jquery.slimscroll.js')
+          script(src='script/jquery.cookie.js')
+          script(src='script/icheck.min.js')
+          script(src='script/custom.min.js')
+          script(src='script/pace.min.js')
+          script(src='script/holder.js')
+          script(src='script/responsive-tabs.js')
+          script(src='script/zabuto_calendar.min.js')
+          script(src='script/index.js')
+          // InputMask
+          script(src='script/input-mask/jquery.inputmask.js')
+          script(src='script/input-mask/jquery.inputmask.date.extensions.js')
+          script(src='script/input-mask/jquery.inputmask.extensions.js')
+          script(src='script/bootstrap-switch.min.js')
+          // CORE JAVASCRIPT
+          script(src='script/main.js')
