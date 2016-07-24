@@ -1,4 +1,6 @@
-extends layout
+doctype html
+html
+  include ./login_head.jade
 
 block content
   form(class='form-signin', action='/login', method='POST')
@@ -16,5 +18,3 @@ block content
     p.alert.alert-danger.form-signin(class='fade in')
       strong Error!
       | #{message}
-
-

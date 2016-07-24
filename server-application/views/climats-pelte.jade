@@ -1,28 +1,7 @@
 doctype html
 html(lang='en')
-  head
-    title Dashboard | Dashboard
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='shortcut icon', href='images/icons/favicon.ico')
-    link(rel='apple-touch-icon', href='images/icons/favicon.png')
-    link(rel='apple-touch-icon', sizes='72x72', href='images/icons/favicon-72x72.png')
-    link(rel='apple-touch-icon', sizes='114x114', href='images/icons/favicon-114x114.png')
-    // Loading bootstrap css
-    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700')
-    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700,300')
-    link(type='text/css', rel='stylesheet', href='styles/jquery-ui-1.10.4.custom.min.css')
-    link(type='text/css', rel='stylesheet', href='styles/font-awesome.min.css')
-    link(type='text/css', rel='stylesheet', href='styles/bootstrap.min.css')
-    link(type='text/css', rel='stylesheet', href='styles/animate.css')
-    link(type='text/css', rel='stylesheet', href='styles/all.css')
-    link(type='text/css', rel='stylesheet', href='styles/main.css')
-    link(type='text/css', rel='stylesheet', href='styles/glyphicons.css')
-    link(type='text/css', rel='stylesheet', href='styles/style-responsive.css')
-    link(type='text/css', rel='stylesheet', href='styles/zabuto_calendar.min.css')
-    link(type='text/css', rel='stylesheet', href='styles/pace.css')
-    link(type='text/css', rel='stylesheet', href='styles/jquery.news-ticker.css')
+  include ./main_head.jade
+
   body.skin-blue.sidebar-mini
     .wrapper
       // BEGIN BACK TO TOP
@@ -62,7 +41,7 @@ html(lang='en')
                   span.caret
                 ul.dropdown-menu.dropdown-user.pull-right
                   li
-                    a(href='login.html')
+                    a(href='login')
                       i.fa.fa-key
                       | Log Out
       // END TOPBAR
@@ -82,7 +61,7 @@ html(lang='en')
                 i.fa.fa-angle-left.pull-right
               ul.treeview-menu
                 li
-                  a(href='modules-main.html')
+                  a(href='modules-main')
                     i.fa.glyphicons.glyphicons-server.fa-fw
                     span.menu-title Главный модуль
             li.treeview.active
@@ -92,24 +71,24 @@ html(lang='en')
                 i.fa.fa-angle-left.pull-right
               ul.treeview-menu
                 li
-                  a(href='climats-cond.html')
+                  a(href='climats-cond')
                     i.fa.glyphicons.glyphicons-snowflake.fa-fw
                     span.menu-title Кондиционер
                 li.active
-                  a(href='climats-pelte.html')
+                  a(href='climats-pelte')
                     i.fa.glyphicons.glyphicons-none-color-swatch.fa-fw
                     span.menu-title Пельтье
                 li
-                  a(href='climats-nagrevateli.html')
+                  a(href='climats-nagrevateli')
                     i.fa.glyphicons.glyphicons-heat.fa-fw
                     span.menu-title Нагреватели
             li
-              a(href='system-power.html')
+              a(href='system-power')
                 i.fa.fa-plug.fa-fw
                   .icon-bg.bg-orange
                 span.menu-title Система питания
             li
-              a(href='system-logs.html')
+              a(href='system-logs')
                 i.fa.fa-file-text-o.fa-fw
                   .icon-bg.bg-orange
                 span.menu-title Логи
@@ -121,19 +100,19 @@ html(lang='en')
                 i.fa.fa-angle-left.pull-right
               ul.treeview-menu
                 li
-                  a(href='options-net.html')
+                  a(href='options-net')
                     span.glyphicons.glyphicons-inbox
                     span.menu-title Сеть
                 li
-                  a(href='options-snmp.html')
+                  a(href='options-snmp')
                     span.glyphicons.glyphicons-cluster
                     span.menu-title SNMP
                 li
-                  a(href='options-modbus.html')
+                  a(href='options-modbus')
                     span.glyphicons.glyphicons-tree-structure
                     span.menu-title ModBus
                 li
-                  a(href='options-time.html')
+                  a(href='options-time')
                     span.glyphicons.glyphicons-calendar
                     span.menu-title Время
       .content-wrapper
@@ -146,7 +125,7 @@ html(lang='en')
             ol.breadcrumb.page-breadcrumb.pull-right
               li
                 i.fa.fa-home
-                a(href='dashboard.html') Главная
+                a(href='dashboard') Главная
                 i.fa.fa-angle-right
               li.hidden
                 a(href='#') Климатика
@@ -308,26 +287,3 @@ html(lang='en')
                             td -20
                             td 50
                             td no
-          script(src='script/jquery-1.10.2.min.js')
-          script(src='script/jquery-migrate-1.2.1.min.js')
-          script(src='script/jquery-ui.js')
-          script(src='script/bootstrap.min.js')
-          script(src='script/bootstrap-hover-dropdown.js')
-          script(src='script/html5shiv.js')
-          script(src='script/respond.min.js')
-          script(src='script/jquery.slimscroll.js')
-          script(src='script/jquery.cookie.js')
-          script(src='script/icheck.min.js')
-          script(src='script/custom.min.js')
-          script(src='script/pace.min.js')
-          script(src='script/holder.js')
-          script(src='script/responsive-tabs.js')
-          script(src='script/zabuto_calendar.min.js')
-          script(src='script/index.js')
-          // InputMask
-          script(src='script/input-mask/jquery.inputmask.js')
-          script(src='script/input-mask/jquery.inputmask.date.extensions.js')
-          script(src='script/input-mask/jquery.inputmask.extensions.js')
-          script(src='script/bootstrap-switch.min.js')
-          // CORE JAVASCRIPT
-          script(src='script/main.js')
