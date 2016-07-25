@@ -1,50 +1,9 @@
 doctype html
 html(lang='en')
   include ./main_head.jade
-
   body.skin-blue.sidebar-mini
     .wrapper
-      // BEGIN BACK TO TOP
-      a#totop(href='#')
-        i.fa.fa-angle-up
-      // END BACK TO TOP
-      // BEGIN TOPBAR
-      #header-topbar-option-demo.page-header-topbar
-        nav#topbar.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0;', data-step='3')
-          .navbar-header
-            a#logo.navbar-brand(href='/')
-              span.fa.fa-rocket
-              span.logo-text Teco System Monitoring
-              span.logo-text-icon(style='display: none') µ
-          .topbar-main
-            a.sidebar-toggle(data-toggle='offcanvas', href='#', role='button')
-              i.fa.fa-bars
-            a#save(href='#')
-              i.fa.fa-save
-            ul.nav.navbar.navbar-top-links.navbar-right.mbn
-              li.dropdown
-                a.dropdown-toggle(data-hover='dropdown', href='#')
-                  i.fa.fa-bell.fa-fw
-                  span.badge.badge-red 3
-              li.dropdown
-                a.dropdown-toggle(data-hover='dropdown', href='#')
-                  i.fa.fa-exclamation-triangle.fa-fw
-                  span.badge.badge-orange 7
-              li.dropdown
-                a.dropdown-toggle(data-hover='dropdown', href='#')
-                  i.fa.fa-flag.fa-fw
-                  span.badge.badge-blue 8
-              li.dropdown.topbar-user
-                a.dropdown-toggle(data-hover='dropdown', href='#')
-                  img.img-responsive.img-circle(src='images/avatar/48.jpg', alt='')
-                  span.hidden-xs Admin
-                  span.caret
-                ul.dropdown-menu.dropdown-user.pull-right
-                  li
-                    a(href='login')
-                      i.fa.fa-key
-                      | Log Out
-      // END TOPBAR
+      include ./top_bar.jade
       // BEGIN SIDEBAR MENU
       aside.main-sidebar
         // sidebar: style can be found in sidebar.less
