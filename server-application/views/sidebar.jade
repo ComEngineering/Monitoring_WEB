@@ -1,0 +1,70 @@
+mixin sidebar(activeItem)
+  aside.main-sidebar
+    // sidebar: style can be found in sidebar.less
+    section.sidebar
+      ul.sidebar-menu
+        li(class=(activeItem==="home" ? "active" : ""))
+          a(href='/')
+            i.fa.glyphicons.glyphicons-info-sign.fa-fw
+            span.menu-title Обзор системы
+        li.treeview(class=(activeItem==="modules-main" ? "active" : ""))
+          a(href='#')
+            i.fa.glyphicons.glyphicons-server.fa-fw
+            span.menu-title Модули
+            i.fa.fa-angle-left.pull-right
+          ul.treeview-menu
+            li(class=(activeItem==="modules-main" ? "active" : ""))
+              a(href='modules-main')
+                i.fa.glyphicons.glyphicons-server.fa-fw
+                span.menu-title Главный модуль
+        li.treeview(class=(activeItem.indexOf("climats") === 0 ? "active" : ""))
+          a(href='#')
+            i.fa.glyphicons.glyphicons-temperature.fa-fw
+            span.menu-title Климатика
+            i.fa.fa-angle-left.pull-right
+          ul.treeview-menu
+            li(class=(activeItem==="climats-cond" ? "active" : ""))
+              a(href='climats-cond')
+                i.fa.glyphicons.glyphicons-snowflake.fa-fw
+                span.menu-title Кондиционер
+            li(class=(activeItem==="climats-pelte" ? "active" : ""))
+              a(href='climats-pelte')
+                i.fa.glyphicons.glyphicons-none-color-swatch.fa-fw
+                span.menu-title Пельтье
+            li(class=(activeItem==="climats-nagrevateli" ? "active" : ""))
+              a(href='climats-nagrevateli')
+                i.fa.glyphicons.glyphicons-heat.fa-fw
+                span.menu-title Нагреватели
+        li(class=(activeItem==="system-power" ? "active" : ""))
+          a(href='system-power')
+            i.fa.fa-plug.fa-fw
+              .icon-bg.bg-orange
+            span.menu-title Система питания
+        li(class=(activeItem==="system-logs" ? "active" : ""))
+          a(href='system-logs')
+            i.fa.fa-file-text-o.fa-fw
+              .icon-bg.bg-orange
+            span.menu-title Логи
+        li.treeview(class=(activeItem.indexOf("options") === 0 ? "active" : ""))
+          a(href='#')
+            i.fa.fa-cog.fa-fw
+              .icon-bg.bg-orange
+            span.menu-title Настройки
+            i.fa.fa-angle-left.pull-right
+          ul.treeview-menu
+            li(class=(activeItem==="options-net" ? "active" : ""))
+              a(href='options-net')
+                span.glyphicons.glyphicons-inbox
+                span.menu-title Сеть
+            li(class=(activeItem==="options-snmp" ? "active" : ""))
+              a(href='options-snmp')
+                span.glyphicons.glyphicons-cluster
+                span.menu-title SNMP
+            li(class=(activeItem==="options-modbus" ? "active" : ""))
+              a(href='options-modbus')
+                span.glyphicons.glyphicons-tree-structure
+                span.menu-title ModBus
+            li(class=(activeItem==="options-time" ? "active" : ""))
+              a(href='options-time')
+                span.glyphicons.glyphicons-calendar
+                span.menu-title Время

@@ -1,79 +1,14 @@
+include sidebar
+include topbar
+
 doctype html
 html(lang='en')
   include ./main_head.jade
   body.skin-blue.sidebar-mini
     .wrapper
-      include ./top_bar.jade
-      // BEGIN SIDEBAR MENU
-      aside.main-sidebar
-        // sidebar: style can be found in sidebar.less
-        section.sidebar
-          ul.sidebar-menu
-            li
-              a(href='/')
-                i.fa.glyphicons.glyphicons-info-sign.fa-fw
-                span.menu-title Обзор системы
-            li.treeview
-              a(href='#')
-                i.fa.glyphicons.glyphicons-server.fa-fw
-                span.menu-title Модули
-                i.fa.fa-angle-left.pull-right
-              ul.treeview-menu
-                li
-                  a(href='modules-main')
-                    i.fa.glyphicons.glyphicons-server.fa-fw
-                    span.menu-title Главный модуль
-            li.treeview
-              a(href='#')
-                i.fa.glyphicons.glyphicons-temperature.fa-fw
-                span.menu-title Климатика
-                i.fa.fa-angle-left.pull-right
-              ul.treeview-menu
-                li
-                  a(href='climats-cond')
-                    i.fa.glyphicons.glyphicons-snowflake.fa-fw
-                    span.menu-title Кондиционер
-                li
-                  a(href='climats-pelte')
-                    i.fa.glyphicons.glyphicons-none-color-swatch.fa-fw
-                    span.menu-title Пельтье
-                li
-                  a(href='climats-nagrevateli')
-                    i.fa.glyphicons.glyphicons-heat.fa-fw
-                    span.menu-title Нагреватели
-            li.active
-              a(href='system-power')
-                i.fa.fa-plug.fa-fw
-                  .icon-bg.bg-orange
-                span.menu-title Система питания
-            li
-              a(href='system-logs')
-                i.fa.fa-file-text-o.fa-fw
-                  .icon-bg.bg-orange
-                span.menu-title Логи
-            li.treeview
-              a(href='#')
-                i.fa.fa-cog.fa-fw
-                  .icon-bg.bg-orange
-                span.menu-title Настройки
-                i.fa.fa-angle-left.pull-right
-              ul.treeview-menu
-                li
-                  a(href='options-net')
-                    span.glyphicons.glyphicons-inbox
-                    span.menu-title Сеть
-                li
-                  a(href='options-snmp')
-                    span.glyphicons.glyphicons-cluster
-                    span.menu-title SNMP
-                li
-                  a(href='options-modbus')
-                    span.glyphicons.glyphicons-tree-structure
-                    span.menu-title ModBus
-                li
-                  a(href='options-time')
-                    span.glyphicons.glyphicons-calendar
-                    span.menu-title Время
+      mixin topbar
+      mixin sidebar("system-power")
+
       .content-wrapper
         #page-wrapper
           // BEGIN TITLE & BREADCRUMB PAGE
