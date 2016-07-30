@@ -4,15 +4,12 @@ var connection = mysql.createConnection({
      host     : 'localhost'
     ,user     : 'root'
     ,password : ''
-    //,socketPath: '/var/lib/mysql/mysql.sock',
+    ,socketPath: '/var/lib/mysql/mysql.sock',
 });
 
 var userBase = {};
 
 userBase.initialize = function() {
-//
-return;
-//
     connection.connect(function(err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
