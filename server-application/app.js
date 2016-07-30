@@ -42,12 +42,7 @@ app.use('/users', users);
 
 passport.use('local', new AuthLocalStrategy(
     function (username, password, done) {
-    // work 
-    //return done(null, {username: username,permissions: cred.permissions});
-	// debug
-	return done(null, {username: username,permissions: 'admin'});
-    
-    user_base.get(username, function(cred) {
+        user_base.get(username, function(cred) {
             if (cred && cred.password == password) {
                 return done(null, {username: username,permissions: cred.permissions});
             }
