@@ -1,0 +1,36 @@
+mixin system_power_content
+  #system-power-content._tab-content
+    .content-wrapper
+          #page-wrapper
+            // BEGIN TITLE & BREADCRUMB PAGE
+            #title-breadcrumb-option-demo.page-title-breadcrumb
+              .page-header.pull-left
+                .page-title
+                  | Система питания
+              ol.breadcrumb.page-breadcrumb.pull-right
+                li
+                  i.fa.fa-home
+                  a(href='dashboard') Главная
+                  i.fa.fa-angle-right
+                li.hidden
+                  a(href='#') Система питания
+                  i.fa.fa-angle-right
+                li.active Система питания
+              .clearfix
+            // END TITLE & BREADCRUMB PAGE
+            // BEGIN CONTENT
+            .page-content
+              .row.mbl
+                .col-md-8
+                  .panel
+                    table#system-power.table.table-hover.table-bordered
+                      thead
+                        tr.bggray
+                          th №
+                          th Параметр
+                          th Значение
+                      tbody
+                        tr
+                          td 1
+                          td
+                          td

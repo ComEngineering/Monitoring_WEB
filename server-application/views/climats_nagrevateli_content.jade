@@ -1,0 +1,174 @@
+mixin climats_nagrevateli_content
+  #climats-nagrevateli-content._tab-content
+   .content-wrapper
+     #page-wrapper
+       // BEGIN TITLE & BREADCRUMB PAGE
+       #title-breadcrumb-option-demo.page-title-breadcrumb
+         .page-header.pull-left
+           .page-title
+             | Климатика \ Нагреватели
+         ol.breadcrumb.page-breadcrumb.pull-right
+           li
+             i.fa.fa-home
+             a(href='dashboard') Главная
+             i.fa.fa-angle-right
+           li.hidden
+             a(href='#') Климатика
+             i.fa.fa-angle-right
+           li.active Климатика
+         .clearfix
+       // END TITLE & BREADCRUMB PAGE
+       // BEGIN CONTENT
+       .page-content
+         .row.mbl
+           ul#generalTab.nav.nav-tabs.responsive.hidden-xs.hidden-sm
+             li.active
+               a(href='#status-tab', data-toggle='tab') Состояния
+             li
+               a(href='#params-tab', data-toggle='tab') Параметры
+             li
+               a(href='#monitor-tab', data-toggle='tab') Монитор событий
+           #generalTabContent.tab-content.responsive.hidden-xs.hidden-sm
+             #status-tab.tab-pane.fade.in.active
+               .row
+                 .col-lg-12
+                   .panel.panel-grey
+                     .panel-heading Температурные датчики кондиционера
+                     .panel-body
+                       table#datchiki-temperaturi-cond.table.table-hover.table-bordered
+                         thead
+                           tr
+                             th №
+                             th Наименование
+                             th Значение
+                             th Комментарий
+                         tbody
+                           tr
+                             td 1
+                             td.active Dt1
+                             td.success 24.0
+                             td.warning Верх отсека активного оборудования
+                           tr
+                             td 1
+                             td.active Dt2
+                             td.success 22.5
+                             td.warning Низ отсека активного оборудования
+               .row
+                 .col-lg-12
+                   .panel.panel-grey
+                     .panel-heading Состояние систем кондиционера
+                     .panel-body
+                       table#status-system-cond.table.table-hover.table-bordered
+                         thead
+                           tr
+                             th №
+                             th Наименование
+                             th Значение
+                             th Комментарий
+                         tbody
+                           tr
+                             td 1
+                             td.active Dt1
+                             td.success 24.0
+                             td.warning Верх отсека активного оборудования
+                           tr
+                             td 1
+                             td.active Dt2
+                             td.success 22.5
+                             td.warning Низ отсека активного оборудования
+               .row
+                 .col-lg-12
+                   .panel.panel-grey
+                     .panel-heading Аварии кондиционера
+                     .panel-body
+                       table#dangers-cond.table.table-hover.table-bordered
+                         thead
+                           tr
+                             th №
+                             th Наименование
+                             th Значение
+                             th Комментарий
+                         tbody
+                           tr
+                             td 1
+                             td.active Dt1
+                             td.success 24.0
+                             td.warning Верх отсека активного оборудования
+                           tr
+                             td 1
+                             td.active Dt2
+                             td.success 22.5
+                             td.warning Низ отсека активного оборудования
+             #params-tab.tab-pane.fade.in
+               .row
+                 .col-md-8
+                   table#parametrs-cond.table.table-hover.table-bordered
+                     thead
+                       tr
+                         th.bggray(colspan='7') Параметрирование кондиционера
+                       tr
+                         th №
+                         th Наименование
+                         th Значение
+                         th Комментарий
+                     tbody
+                       tr
+                         td 1
+                         td.active t внутренняя (С)
+                         td 22
+                         td задание внутренней температуры (относительно t3)(min:10, max:40)
+                       tr
+                         td 1
+                         td.active t внутренняя (С)
+                         td 22
+                         td задание внутренней температуры (относительно t3)(min:10, max:40)
+                       tr
+                         td.bggray(colspan='7') Настройка работы вентилятора конденсатора "!!!"
+                       tr
+                         td 1
+                         td.active t внутренняя (С)
+                         td 22
+                         td задание внутренней температуры (относительно t3)(min:10, max:40)
+                       tr
+                         td 1
+                         td.active t внутренняя (С)
+                         td 22
+                         td задание внутренней температуры (относительно t3)(min:10, max:40)
+             #monitor-tab.tab-pane.fade.in
+               .row
+                 .col-md-8
+                   table#status-discrete-in.table.table-hover.table-bordered
+                     thead
+                       tr
+                         th.bggray(colspan='7') Монитор событий
+                       tr
+                         th №
+                         th Вкл/выкл
+                         th Наименование
+                         th Строгость события
+                         th(colspan='2')
+                           | Значения события
+                           br
+                           | (меньше/больше)
+                         th Действие
+                     tbody
+                       tr
+                         td.bggray(colspan='7') Температурные датчики кондиционера
+                       tr
+                         td 1
+                         td.active
+                           input(type='checkbox', name='dt1')
+                         td Dt1
+                         td.success warning
+                         td -20
+                         td 50
+                         td no
+                       tr
+                         td 2
+                         td.active
+                           input(type='checkbox', name='dt1')
+                         td Dt2
+                         td.success warning
+                         td -20
+                         td 50
+                         td no

@@ -1,61 +1,60 @@
 include sidebar
 include topbar
+include home_content
+include modules_main_content
+include system_power_content
+include climats_cond_content
+include climats_pelte_content
+include climats_nagrevateli_content
+include options_modbus_content
+include options_net_content
+include options_time_content
+include system_logs_content
+
+script(type='text/javascript').
 
 doctype html
 html(lang='en')
   include ./main_head.jade
   body.skin-blue.sidebar-mini
+    script.
+      function activateSubmenuWithID(elementID)
+      {
+        console.log('qqq');
+        var elementContentID = elementID + '-content';
+        var elementSidebarID = elementID + '-side';
+        var contents = document.getElementsByClassName('_tab-content');
+        var i;
+        for (i = 0; i < contents.length; i++) {
+          if (contents[i].id  === elementContentID) {
+            contents[i].style.display = "";
+          } else {
+            contents[i].style.display = "none";
+          }
+        }
+        contents = document.getElementsByClassName('_tab-side');
+        for (i = 0; i < contents.length; i++) {
+          if (contents[i].id  === elementSidebarID) {
+            contents[i].classList.add('active');
+          } else {
+            contents[i].classList.remove('active');
+          }
+        }
+      }
+
+      $(function() {
+        activateSubmenuWithID('home');
+      });
     .wrapper
       mixin topbar
-      mixin sidebar("home")
-
-      .content-wrapper
-        #page-wrapper
-          // BEGIN TITLE & BREADCRUMB PAGE
-          #title-breadcrumb-option-demo.page-title-breadcrumb
-            .page-header.pull-left
-              .page-title
-                | Обзор системы
-            ol.breadcrumb.page-breadcrumb.pull-right
-              li
-                i.fa.fa-home
-                a(href='dashboard') Главная
-                i.fa.fa-angle-right
-              li.hidden
-                a(href='#') Обзор системы
-                i.fa.fa-angle-right
-              li.active Обзор системы
-            .clearfix
-          // END TITLE & BREADCRUMB PAGE
-          // BEGIN CONTENT
-          .page-content
-            .row.mbl
-              .col-md-12
-                .panel.panel-violet
-                  .panel-heading Текущий лог системы
-                  .panel-body
-                    table#currentSystemLog.table.table-hover.table-striped
-                      thead
-                        tr
-                          th Дата и время
-                          th Источник
-                          th Строгость
-                          th Событие
-                      tbody
-                        tr
-                          td 20.05.2016 16:12
-                          td Модули/Главный модуль
-                          td
-                            span.label.label-sm.label-success Major
-                          td Превышение min значения: Dt1
-            .row.mbl
-              .col-md-8
-                .panel.panel-green
-                  .panel-heading Информация о системе:
-                  .panel-body
-                    table#systemInfo.table.table-hover.table-striped
-                      thead
-                      tbody
-                        tr
-                          td Дата/время 
-                          td 21.05.2016
+      mixin sidebar
+      mixin home_content
+      mixin modules_main_content
+      mixin system_power_content
+      mixin climats_cond_content
+      mixin climats_nagrevateli_content
+      mixin options_modbus_content
+      mixin options_net_content
+      mixin options_time_content
+      mixin system_logs_content
+      mixin climats_pelte_content

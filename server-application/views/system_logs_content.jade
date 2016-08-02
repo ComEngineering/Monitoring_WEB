@@ -1,0 +1,88 @@
+mixin system_logs_content
+  #system-logs-content._tab-content
+    .content-wrapper
+      #page-wrapper
+        // BEGIN TITLE & BREADCRUMB PAGE
+        #title-breadcrumb-option-demo.page-title-breadcrumb
+          .page-header.pull-left
+            .page-title
+              | Логи
+          ol.breadcrumb.page-breadcrumb.pull-right
+            li
+              i.fa.fa-home
+              a(href='dashboard') Главная
+              i.fa.fa-angle-right
+            li.hidden
+              a(href='#') Логи
+              i.fa.fa-angle-right
+            li.active Логи
+          .clearfix
+        // END TITLE & BREADCRUMB PAGE
+        // BEGIN CONTENT
+        .page-content
+          .row
+            .col-12
+              div(style='padding:10px;background:#FFF;margin-bottom:20px')
+                .row
+                  .col-md-1.col-sd-1.col-xs-1
+                    i.fa.fa-trash(style='font-size:25px;margin-top:20px;margin-left:15px')
+                  .col-md-2
+                    | Start time
+                    br
+                    .input-icon.right
+                      i.fa.fa-calendar
+                      input#logStartDate.form-control(type='text', placeholder='', data-inputmask="'alias': 'dd/mm/yyyy'", data-mask='')
+                  .col-md-2
+                    | End time
+                    br
+                    .input-icon.right
+                      i.fa.fa-calendar
+                      input#logEndDate.form-control(type='text', placeholder='', data-inputmask="'alias': 'dd/mm/yyyy'", data-mask='')
+                  .col-md-2
+                    | Mask
+                    br
+                    select#logMask.form-control(type='text', placeholder='')
+                      option
+                  .col-md-5(style='text-align:right;margin-top:20px')
+                    | Show 
+                    select#logEntries(type='text', placeholder='')
+                      option 10
+                    |  entries
+          .row.mbl
+            .col-md-8
+              .panel
+                table#system-power.table.table-hover.table-bordered
+                  thead
+                    tr.bggray
+                      th
+                      th Дата и время
+                      th Источник
+                      th Строгость
+                      th Событие
+                  tbody
+                    tr
+                      td
+                        input(type='checkbox', name='log1')
+                      td
+                      td
+                      td
+                      td
+                .row-fluid
+                  .col-md-12
+                    ul#pagination.pagination.mtm.mbm
+                      li.disabled
+                        a(href='#') «
+                      li.active
+                        a(href='#') 1
+                      li
+                        a(href='#') 2
+                      li
+                        a(href='#') 3
+                      li
+                        a(href='#') 4
+                      li
+                        a(href='#') 5
+                      li
+                        a(href='#') »
+      script.
+        $("[data-mask]").inputmask();

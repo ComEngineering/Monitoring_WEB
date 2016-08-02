@@ -1,0 +1,52 @@
+mixin home_content
+  #home-content._tab-content
+    .content-wrapper
+      #page-wrapper
+        // BEGIN TITLE & BREADCRUMB PAGE
+        #title-breadcrumb-option-demo.page-title-breadcrumb
+          .page-header.pull-left
+            .page-title
+              | Обзор системы
+          ol.breadcrumb.page-breadcrumb.pull-right
+            li
+              i.fa.fa-home
+              a(href='dashboard') Главная
+              i.fa.fa-angle-right
+            li.hidden
+              a(href='#') Обзор системы
+              i.fa.fa-angle-right
+            li.active Обзор системы
+          .clearfix
+        // END TITLE & BREADCRUMB PAGE
+        // BEGIN CONTENT
+        .page-content
+          .row.mbl
+            .col-md-12
+              .panel.panel-violet
+                .panel-heading Текущий лог системы
+                .panel-body
+                  table#currentSystemLog.table.table-hover.table-striped
+                    thead
+                      tr
+                        th Дата и время
+                        th Источник
+                        th Строгость
+                        th Событие
+                    tbody
+                      tr
+                        td 20.05.2016 16:12
+                        td Модули/Главный модуль
+                        td
+                          span.label.label-sm.label-success Major
+                        td Превышение min значения: Dt1
+          .row.mbl
+            .col-md-8
+              .panel.panel-green
+                .panel-heading Информация о системе:
+                .panel-body
+                  table#systemInfo.table.table-hover.table-striped
+                    thead
+                    tbody
+                      tr
+                        td Дата/время 
+                        td 21.05.2016

@@ -1,0 +1,75 @@
+mixin options_modbus_content
+  #options-modbus-content._tab-content
+    .content-wrapper
+      #page-wrapper
+        // BEGIN TITLE & BREADCRUMB PAGE
+        #title-breadcrumb-option-demo.page-title-breadcrumb
+          .page-header.pull-left
+            .page-title
+              | Настройки / ModBus
+          ol.breadcrumb.page-breadcrumb.pull-right
+            li
+              i.fa.fa-home
+              a(href='dashboard') Главная
+              i.fa.fa-angle-right
+            li.hidden
+              a(href='#') Настройки
+              i.fa.fa-angle-right
+            li.active Настройки
+          .clearfix
+        // END TITLE & BREADCRUMB PAGE
+        // BEGIN CONTENT
+        .page-content
+          .row.mbl
+            .col-md-5
+              .panel.panel-violet
+                .panel-heading
+                  | ModBus
+                .panel-body.pan
+                  form.form-horizontal(action='#')
+                    .form-body.pal
+                      .form-group
+                        label.col-md-4.control-label(for='inputName')
+                          | Скорость:
+                        .col-md-8
+                          select#portSpeed.form-control
+                            option 9600
+                            option(value='9600') 9600
+                            option(value='4096') 4096
+                            option(value='2048') 2048
+                      .form-group
+                        label.col-md-4.control-label(for='inputName')
+                          | Количество бит данных:
+                        .col-md-8
+                          .radio
+                            label.radio-inline
+                              input#options8bit(type='radio', name='optionsbit', value='7 bit', checked='checked')
+                              |                                                                 7 бит
+                            label.radio-inline
+                              input#options8bit(type='radio', name='optionsbit', value='8 bit')
+                              |   8 бит
+                      .form-group
+                        label.col-md-4.control-label(for='inputName')
+                          | Паритет:
+                        .col-md-8
+                          .radio
+                            label.radio-inline
+                              input#optionsnone(type='radio', name='optionsparitet', value='none', checked='checked')
+                              |                                                                 none
+                            label.radio-inline
+                              input#optionsodd(type='radio', name='optionsparitet', value='odd')
+                              |   odd
+                            label.radio-inline
+                              input#optionseven(type='radio', name='optionsparitet', value='even')
+                              |   even
+                      .form-group
+                        label.col-md-4.control-label(for='inputName')
+                          | Количество стоп бит:
+                        .col-md-8
+                          .radio
+                            label.radio-inline
+                              input#options1stop(type='radio', name='optionsStopBit', value='1')
+                              |   1
+                            label.radio-inline
+                              input#options2stop(type='radio', name='optionsStopBit', value='2')
+                              |   2

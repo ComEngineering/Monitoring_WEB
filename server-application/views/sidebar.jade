@@ -1,70 +1,70 @@
-mixin sidebar(activeItem)
+mixin sidebar
   aside.main-sidebar
     // sidebar: style can be found in sidebar.less
     section.sidebar
       ul.sidebar-menu
-        li(class=(activeItem==="home" ? "active" : ""))
-          a(href='/')
+        li._tab-side#home-side
+          a(href='#', onclick="activateSubmenuWithID('home')")
             i.fa.glyphicons.glyphicons-info-sign.fa-fw
             span.menu-title Обзор системы
-        li.treeview(class=(activeItem==="modules-main" ? "active" : ""))
+        li
           a(href='#')
             i.fa.glyphicons.glyphicons-server.fa-fw
             span.menu-title Модули
             i.fa.fa-angle-left.pull-right
           ul.treeview-menu
-            li(class=(activeItem==="modules-main" ? "active" : ""))
-              a(href='modules-main')
+            li._tab-side#modules-main-side
+              a(href='#', onclick="activateSubmenuWithID('modules-main')")
                 i.fa.glyphicons.glyphicons-server.fa-fw
                 span.menu-title Главный модуль
-        li.treeview(class=(activeItem.indexOf("climats") === 0 ? "active" : ""))
+        li.treeview
           a(href='#')
             i.fa.glyphicons.glyphicons-temperature.fa-fw
             span.menu-title Климатика
             i.fa.fa-angle-left.pull-right
           ul.treeview-menu
-            li(class=(activeItem==="climats-cond" ? "active" : ""))
-              a(href='climats-cond')
+            li._tab-side#climats-cond-side
+              a(href='#', onclick="activateSubmenuWithID('climats-cond')")
                 i.fa.glyphicons.glyphicons-snowflake.fa-fw
                 span.menu-title Кондиционер
-            li(class=(activeItem==="climats-pelte" ? "active" : ""))
-              a(href='climats-pelte')
+            li._tab-side#climats-pelte-side
+              a(href='#', onclick="activateSubmenuWithID('climats-pelte')")
                 i.fa.glyphicons.glyphicons-none-color-swatch.fa-fw
                 span.menu-title Пельтье
-            li(class=(activeItem==="climats-nagrevateli" ? "active" : ""))
-              a(href='climats-nagrevateli')
+            li._tab-side#climats-nagrevateli-side
+              a(href='#', onclick="activateSubmenuWithID('climats-nagrevateli')")
                 i.fa.glyphicons.glyphicons-heat.fa-fw
                 span.menu-title Нагреватели
-        li(class=(activeItem==="system-power" ? "active" : ""))
-          a(href='system-power')
+        li._tab-side#system-power-side
+          a(href='#', onclick="activateSubmenuWithID('system-power')")
             i.fa.fa-plug.fa-fw
               .icon-bg.bg-orange
             span.menu-title Система питания
-        li(class=(activeItem==="system-logs" ? "active" : ""))
-          a(href='system-logs')
+        li._tab-side#system-logs
+          a(href='#', onclick="activateSubmenuWithID('system-logs')")
             i.fa.fa-file-text-o.fa-fw
               .icon-bg.bg-orange
             span.menu-title Логи
-        li.treeview(class=(activeItem.indexOf("options") === 0 ? "active" : ""))
+        li.treeview
           a(href='#')
             i.fa.fa-cog.fa-fw
               .icon-bg.bg-orange
             span.menu-title Настройки
             i.fa.fa-angle-left.pull-right
           ul.treeview-menu
-            li(class=(activeItem==="options-net" ? "active" : ""))
-              a(href='options-net')
+            li._tab-side#options-net-side
+              a(href='#', onclick="activateSubmenuWithID('options-net')")
                 span.glyphicons.glyphicons-inbox
                 span.menu-title Сеть
-            li(class=(activeItem==="options-snmp" ? "active" : ""))
-              a(href='options-snmp')
+            li._tab-side#options-snmp-side
+              a(href='#', onclick="activateSubmenuWithID('options-snmp')")
                 span.glyphicons.glyphicons-cluster
                 span.menu-title SNMP
-            li(class=(activeItem==="options-modbus" ? "active" : ""))
-              a(href='options-modbus')
+            li._tab-side#options-modbus-side
+              a(href='#', onclick="activateSubmenuWithID('options-modbus')")
                 span.glyphicons.glyphicons-tree-structure
                 span.menu-title ModBus
-            li(class=(activeItem==="options-time" ? "active" : ""))
-              a(href='options-time')
+            li._tab-side#options-time-side
+              a(href='#', onclick="activateSubmenuWithID('options-time')")
                 span.glyphicons.glyphicons-calendar
                 span.menu-title Время

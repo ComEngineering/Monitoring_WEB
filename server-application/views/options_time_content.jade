@@ -1,0 +1,71 @@
+mixin options_time_content
+  #options-time-content._tab-content
+    .content-wrapper
+      #page-wrapper
+        // BEGIN TITLE & BREADCRUMB PAGE
+        #title-breadcrumb-option-demo.page-title-breadcrumb
+          .page-header.pull-left
+            .page-title
+              | Настройки / Время
+          ol.breadcrumb.page-breadcrumb.pull-right
+            li
+              i.fa.fa-home
+              a(href='dashboard') Главная
+              i.fa.fa-angle-right
+            li.hidden
+              a(href='#') Настройки
+              i.fa.fa-angle-right
+            li.active Настройки
+          .clearfix
+        // END TITLE & BREADCRUMB PAGE
+        // BEGIN CONTENT
+        .page-content
+          .row.mbl
+            .col-md-5
+              .panel.panel-violet
+                .panel-heading
+                  | Время
+                .panel-body.pan
+                  form.form-horizontal(action='#')
+                    .form-body.pal
+                      .form-group
+                        label.col-md-4.control-label(for='inputName')
+                          | Часовой пояс:
+                        .col-md-8
+                          select#time.form-control
+                            option UTC+2
+                      .form-group
+                        label.col-md-4.control-label(for='sysDate')
+                          | Дата:
+                        .col-md-8
+                          .input-icon.right
+                            i.fa.fa-calendar
+                            input#sysDate.form-control(type='text', placeholder='', data-inputmask="'alias': 'dd/mm/yyyy'", data-mask='')
+                      .form-group
+                        label.col-md-4.control-label(for='sysTime')
+                          | Время:
+                        .col-md-8
+                          .input-icon.right
+                            i.fa.fa-clock-o
+                            input#sysTime.form-control(type='text', placeholder='', data-inputmask="'alias': 'hh:mm'", data-mask='')
+                      .form-group
+                        label.col-md-4.control-label(for='sysSyncNTP')
+                          | Синхронизация по NTP:
+                        .col-md-8
+                          .input-icon.right
+                            input#sysSyncNTP.switch(type='checkbox', name='sysSyncNTP')
+                      .form-group
+                        label.col-md-4.control-label(for='addressNTP')
+                          | Адрес сервера NTP:
+                        .col-md-8
+                          .input-icon.right
+                            i.fa.fa-text
+                            input#addressNTP.form-control(type='text', placeholder='')
+                      .form-group
+                        label.col-md-4.control-label(for='intervalSync')
+                          | Интервал синхронизации:
+                        .col-md-8
+                          select#intervalSync.form-control
+                            option 1 день
+      script.
+        $("[data-mask]").inputmask();

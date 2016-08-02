@@ -1,0 +1,698 @@
+mixin modules_main_content
+  #modules-main-content._tab-content
+    .content-wrapper
+      #page-wrapper
+        // BEGIN TITLE & BREADCRUMB PAGE
+        #title-breadcrumb-option-demo.page-title-breadcrumb
+          .page-header.pull-left
+            .page-title
+              | Модули \ Главный модуль
+          ol.breadcrumb.page-breadcrumb.pull-right
+            li
+              i.fa.fa-home
+              a(href='dashboard') Главная
+              i.fa.fa-angle-right
+            li.hidden
+              a(href='#') Модули
+              i.fa.fa-angle-right
+            li.active Модули
+          .clearfix
+        // END TITLE & BREADCRUMB PAGE
+        // BEGIN CONTENT
+        .page-content
+          .row.mbl
+            ul#generalTab.nav.nav-tabs.responsive.hidden-xs.hidden-sm
+              li.active
+                a(href='#status-tab', data-toggle='tab') Состояния
+              li
+                a(href='#params-tab', data-toggle='tab') Параметры
+              li
+                a(href='#monitor-tab', data-toggle='tab') Монитор событий
+            #generalTabContent.tab-content.responsive.hidden-xs.hidden-sm
+              #status-tab.tab-pane.fade.in.active
+                .row
+                  .col-lg-12
+                    .panel.panel-grey
+                      .panel-heading Датчики температуры
+                      .panel-body
+                        table#datchiki-temperaturi.table.table-hover.table-bordered
+                          thead
+                            tr
+                              th №
+                              th Наименование
+                              th Значение
+                              th Комментарий
+                          tbody
+                            tr
+                              td 1
+                              td.active Dt1
+                              td#dt1.success 24.0
+                              td.warning Верх отсека активного оборудования
+                            tr
+                              td 2
+                              td.active Dt2
+                              td#dt2.success 22.5 °С
+                              td.warning Низ отсека активного оборудования
+                            tr
+                              td 3
+                              td.active Dt3
+                              td#dt3.success 23.5 °С
+                              td.warning Спереди отсека АКБ
+                            tr
+                              td 4
+                              td.active Dt4
+                              td#dt4.success ---
+                              td.warning Disable
+                .row
+                  .col-lg-12
+                    .panel.panel-grey
+                      .panel-heading Состояние дискретных входов
+                      .panel-body
+                        table#status-discrete-in.table.table-hover.table-bordered
+                          thead
+                            tr
+                              th №
+                              th Наименование
+                              th Значение
+                              th Комментарий
+                          tbody
+                            tr
+                              td 1
+                              td.active DIN 1
+                              td#din1.success Active
+                              td.warning Датчик дыма 1 (нормально: Active)
+                            tr
+                              td 2
+                              td.active DIN 2
+                              td#din2.success Inactive
+                              td.warning Датчик дыма 2 (нормально: Active)
+                            tr
+                              td 3
+                              td.active DIN 3
+                              td#din3.success Inactive
+                              td.warning Датчик удара (нормально: Incative)
+                            tr
+                              td 4
+                              td.active DIN 4
+                              td#din4.success Inactive
+                              td.warning 0V - Inactive, 12V - Active
+                            tr
+                              td 5
+                              td.active DIN 5
+                              td#din5.success Inactive
+                              td.warning 0V - Inactive, 12V - Active
+                            tr
+                              td 6
+                              td.active DIN 6
+                              td#din6.success Inactive
+                              td.warning 0V - Inactive, 12V - Active
+                            tr
+                              td 7
+                              td.active DIN 7
+                              td#din7.success Inactive
+                              td.warning 0V - Inactive, 12V - Active
+                            tr
+                              td 8
+                              td.active DIN 8
+                              td#din8.success Inactive
+                              td.warning 0V - Inactive, 12V - Active
+                .row
+                  .col-lg-12
+                    .panel.panel-grey
+                      .panel-heading Состояние входов сухих контактов
+                      .panel-body
+                        table#status-in-dry-contacts.table.table-hover.table-bordered
+                          thead
+                            tr
+                              th №
+                              th Наименование
+                              th Значение
+                              th Комментарий
+                          tbody
+                            tr
+                              td 1
+                              td.active DI 1
+                              td#di1.success Closed
+                              td.warning Датчик открытия двери 1 (нормально: Closed)
+                            tr
+                              td 2
+                              td.active DI 2
+                              td#di2.success Opened
+                              td.warning Датчик открытия двери 2 (нормально: Closed)
+                            tr
+                              td 3
+                              td.active DI 3
+                              td#di3.success Opened
+                              td.warning Датчик затопления (нормально: Closed)
+                            tr
+                              td 4
+                              td.active DI 4
+                              td#di4.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 5
+                              td.active DI 5
+                              td#di5.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 6
+                              td.active DI 6
+                              td#di6.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 7
+                              td.active DI 7
+                              td#di7.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 8
+                              td.active DI 8
+                              td#di8.success Opened
+                              td.warning Opened - Default
+                .row
+                  .col-lg-12
+                    .panel.panel-grey
+                      .panel-heading Состояние выходов сигнальных сухих контактов
+                      .panel-body
+                        table#status-out-signal-dry-contacts.table.table-hover.table-bordered
+                          thead
+                            tr
+                              th №
+                              th Наименование
+                              th Значение
+                              th Комментарий
+                          tbody
+                            tr
+                              td 1
+                              td.active SDO 1
+                              td#sdo1.success Closed
+                              td.warning Включение сирены
+                            tr
+                              td 2
+                              td.active SDO 2
+                              td#sdo2.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 3
+                              td.active SDO 3
+                              td#sdo3.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 4
+                              td.active SDO 4
+                              td#sdo4.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 5
+                              td.active SDO 5
+                              td#sdo5.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 6
+                              td.active SDO 6
+                              td#sdo6.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 7
+                              td.active SDO 7
+                              td#sdo7.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 8
+                              td.active SDO 8
+                              td#sdo8.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 9
+                              td.active SDO 9
+                              td#sdo9.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 10
+                              td.active SDO 10
+                              td#sdo10.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 11
+                              td.active SDO 11
+                              td#sdo11.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 12
+                              td.active SDO 12
+                              td#sdo12.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 13
+                              td.active SDO 13
+                              td#sdo13.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 14
+                              td.active SDO 14
+                              td#sdo14.success Opened
+                              td.warning Opened - Default
+                .row
+                  .col-lg-12
+                    .panel.panel-grey
+                      .panel-heading Состояние выходов силовых сухих контактов
+                      .panel-body
+                        table#status-out-silovih-dry-contacts.table.table-hover.table-bordered
+                          thead
+                            tr
+                              th №
+                              th Наименование
+                              th Значение
+                              th Комментарий
+                          tbody
+                            tr
+                              td 1
+                              td.active PDO 1
+                              td#pdo1.success Closed
+                              td.warning Загродительные огни
+                            tr
+                              td 2
+                              td.active PDO 2
+                              td#pdo2.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 3
+                              td.active PDO 3
+                              td#pdo3.success Opened
+                              td.warning Opened - Default
+                            tr
+                              td 4
+                              td.active PDO 4
+                              td#pdo4.success Opened
+                              td.warning Opened - Default
+              #params-tab.tab-pane.fade.in
+                .row
+                  .col-md-12
+                    h2 Ручное управление реле
+                .row
+                  .col-lg-4
+                    form.form-horizontal(action='#')
+                      .form-body.pal
+                        table#rele-signal.table.table-hover
+                          thead
+                            tr
+                              th  
+                              th
+                              th Сигнальные
+                          tbody
+                            tr
+                              td SDO 1
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO1(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO1.switch(type='checkbox', name='swSDO1', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 2
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO2(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO2.switch(type='checkbox', name='swSDO2', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 3
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO3(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO3.switch(type='checkbox', name='swSDO3', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 4
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO4(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO4.switch(type='checkbox', name='swSDO4', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 5
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO5(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO5.switch(type='checkbox', name='swSDO5', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 6
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO6(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO6.switch(type='checkbox', name='swSDO6', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 7
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO7(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO7.switch(type='checkbox', name='swSDO7', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 8
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO8(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO8.switch(type='checkbox', name='swSDO8', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 9
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO9(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO9.switch(type='checkbox', name='swSDO9', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 10
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO10(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO10.switch(type='checkbox', name='swSDO10', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 11
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO11(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO11.switch(type='checkbox', name='swSDO11', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 12
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO12(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO12.switch(type='checkbox', name='swSDO12', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 13
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO13(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO13.switch(type='checkbox', name='swSDO13', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td SDO 14
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkSDO14(tabindex='5', type='checkbox')
+                              td
+                                input#swSDO14.switch(type='checkbox', name='swSDO14', data-on-text='Opened', data-off-text='Closed')
+                  .col-lg-4
+                    form.form-horizontal(action='#')
+                      .form-body.pal
+                        table#rele-silovie.table.table-hover
+                          thead
+                            tr
+                              th  
+                              th
+                              th Силовые
+                          tbody
+                            tr
+                              td PDO 1
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkPDO1(tabindex='5', type='checkbox')
+                              td
+                                input#swPDO1.switch(type='checkbox', name='swPDO1', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td PDO 2
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkPDO2(tabindex='5', type='checkbox')
+                              td
+                                input#swPDO2.switch(type='checkbox', name='swPDO2', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td PDO 3
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkPDO3(tabindex='5', type='checkbox')
+                              td
+                                input#swPDO3.switch(type='checkbox', name='swPDO3', data-on-text='Opened', data-off-text='Closed')
+                            tr
+                              td PDO 4
+                              td.active(width='50px')
+                                .row-fluid
+                                  .col-md-12
+                                    .form-group.mbn
+                                      .checkbox
+                                        label
+                                          input#chkPDO4(tabindex='5', type='checkbox')
+                              td
+                                input#swPDO4.switch(type='checkbox', name='swPDO4', data-on-text='Opened', data-off-text='Closed')
+              #monitor-tab.tab-pane.fade.in
+                .row
+                  .col-md-8
+                    table#status-discrete-in.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th.bggray(colspan='7') Монитор событий
+                        tr
+                          th №
+                          th Вкл/выкл
+                          th Наименование
+                          th Строгость события
+                          th(colspan='2')
+                            | Значения события
+                            br
+                            | (меньше/больше)
+                          th Действие
+                      tbody
+                        tr
+                          td.bggray(colspan='7') Температурные датчики
+                        tr
+                          td 1
+                          td.active
+                            input#chkmDT1(type='checkbox', name='mdt1')
+                          td Dt1
+                          td.success warning
+                          td#chkmDT1r -20
+                          td#chkmDT1r 50
+                          td#chkeventDT1 no
+                        tr
+                          td 2
+                          td.active
+                            input#chkmDT2(type='checkbox', name='mdt2')
+                          td Dt2
+                          td.success warning
+                          td#chkmDT2r -20
+                          td#chkmDT1r 50
+                          td#chkeventDT2 no
+                        tr
+                          td 3
+                          td.active
+                            input#chkmDT3(type='checkbox', name='mdt3')
+                          td Dt3
+                          td.success warning
+                          td#chkmDT3r -20
+                          td#chkmDT3r 50
+                          td#chkeventDT3 no
+                        tr
+                          td 4
+                          td.active
+                            input#chkmDT4(type='checkbox', name='mdt4')
+                          td Dt1
+                          td.success warning
+                          td#chkmDT4r -20
+                          td#chkmDT4r 50
+                          td#chkeventDT4 no
+                        tr
+                          td.bggray(colspan='7') Состояние дискретных входов
+                        tr
+                          td 1
+                          td.active
+                            input#chkmDIN1(type='checkbox', name='mdin1')
+                          td DIN 1
+                          td.success warning
+                          td#chkmDIN1r(colspan='2') active
+                          td#chkeventDIN1 no
+                        tr
+                          td 2
+                          td.active
+                            input#chkmDIN2(type='checkbox', name='mdin2')
+                          td DIN 2
+                          td.success warning
+                          td#chkmDIN2r(colspan='2') active
+                          td#chkeventDIN2 no
+                        tr
+                          td 3
+                          td.active
+                            input#chkmDIN3(type='checkbox', name='mdin3')
+                          td DIN 3
+                          td.success warning
+                          td#chkmDIN3r(colspan='2') active
+                          td#chkeventDIN3 no
+                        tr
+                          td 4
+                          td.active
+                            input#chkmDIN4(type='checkbox', name='mdin4')
+                          td DIN 4
+                          td.success warning
+                          td#chkmDIN4r(colspan='2') active
+                          td#chkeventDIN4 no
+                        tr
+                          td 5
+                          td.active
+                            input#chkmDIN5(type='checkbox', name='mdin5')
+                          td DIN 5
+                          td.success warning
+                          td#chkmDIN5r(colspan='2') active
+                          td#chkeventDIN5 no
+                        tr
+                          td 6
+                          td.active
+                            input#chkmDIN6(type='checkbox', name='mdin6')
+                          td DIN 6
+                          td.success warning
+                          td#chkmDIN6r(colspan='2') active
+                          td#chkeventDIN6 no
+                        tr
+                          td 7
+                          td.active
+                            input#chkmDIN7(type='checkbox', name='mdin7')
+                          td DIN 7
+                          td.success warning
+                          td#chkmDIN7r(colspan='2') active
+                          td#chkeventDIN7 no
+                        tr
+                          td 8
+                          td.active
+                            input#chkmDIN8(type='checkbox', name='mdin8')
+                          td DIN 8
+                          td.success warning
+                          td#chkmDIN8r(colspan='2') active
+                          td#chkeventDIN8 no
+                        tr
+                          td.bggray(colspan='7') Состояние входов сухих контактов
+                        tr
+                          td 1
+                          td.active
+                            input#chkmDI1(type='checkbox', name='mdi1')
+                          td DIN 1
+                          td.success warning
+                          td#chkmDI1r(colspan='2') active
+                          td#chkeventDI1 no
+                        tr
+                          td 2
+                          td.active
+                            input#chkmDI2(type='checkbox', name='mdi2')
+                          td DIN 2
+                          td.success warning
+                          td#chkmDI2r(colspan='2') active
+                          td#chkeventDI2 no
+                        tr
+                          td 3
+                          td.active
+                            input#chkmDI3(type='checkbox', name='mdi3')
+                          td DIN 3
+                          td.success warning
+                          td#chkmDI3r(colspan='2') active
+                          td#chkeventDI3 no
+                        tr
+                          td 4
+                          td.active
+                            input#chkmDI4(type='checkbox', name='mdi4')
+                          td DIN 4
+                          td.success warning
+                          td#chkmDI4r(colspan='2') active
+                          td#chkeventDI4 no
+                        tr
+                          td 5
+                          td.active
+                            input#chkmDI5(type='checkbox', name='mdi5')
+                          td DIN 5
+                          td.success warning
+                          td#chkmDI5r(colspan='2') active
+                          td#chkeventDI5 no
+                        tr
+                          td 6
+                          td.active
+                            input#chkmDI6(type='checkbox', name='mdi6')
+                          td DIN 6
+                          td.success warning
+                          td#chkmDI6r(colspan='2') active
+                          td#chkeventDI6 no
+                        tr
+                          td 7
+                          td.active
+                            input#chkmDI7(type='checkbox', name='mdi7')
+                          td DIN 7
+                          td.success warning
+                          td#chkmDI7r(colspan='2') active
+                          td#chkeventDI7 no
+                        tr
+                          td 8
+                          td.active
+                            input#chkmDI8(type='checkbox', name='mdi8')
+                          td DIN 8
+                          td.success warning
+                          td#chkmDI8r(colspan='2') active
+                          td#chkeventDI8 no
